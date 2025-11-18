@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@media (min-width: 640px) {
+	[id="movelogin-settings-module_global--import_export"] .movelogin-form-table,
+	[id="movelogin-settings-module_global--movelogin_display_apikey_options"] .movelogin-form-table {
+		display: table;
+	}
+	[id="movelogin-settings-module_global--import_export"] .movelogin-form-table > .movelogin-setting-row,
+	[id="movelogin-settings-module_global--movelogin_display_apikey_options"] .movelogin-form-table > .movelogin-setting-row {
+		display: table-cell;
+		vertical-align: top;
+		border-bottom: 0;
+	}
+	[id$="--import_export"] .movelogin-setting-row_settings-manager_export_settings,
+	[id$="--movelogin_display_apikey_options"] .movelogin-setting-row_consumer_email {
+		padding-right: 45px;
+	}
+	[id$="--import_export"] .movelogin-setting-row_settings-manager_import_settings,
+	[id$="--movelogin_display_apikey_options"] .movelogin-setting-row_consumer_key {
+		padding-left: 45px;
+	}
+}

@@ -1,0 +1,4 @@
+# Ignore specific files
+LICENCE
+README.md
+.DS_Store

@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+.movelogin-notice.has-plugin-title {
+	margin-bottom: 33px !important;
+	position: relative;
+}
+.movelogin-notice.movelogin-flex {
+	position: relative;
+	padding: 10px 20px;
+	clear: both;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+.movelogin-notice.mini {
+	padding: 5px 20px;
+}
+[id="screen-meta"] + .movelogin-notice.movelogin-flex {
+	margin-top: 20px;
+}
+[id="screen-meta-links"] + .movelogin-notice.movelogin-flex {
+	margin-top: 35px;
+}
+.movelogin-notice .movelogin-col-logo {
+	flex-basis: 113px;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+.movelogin-notice .movelogin-col-icon {
+	flex-basis: 5%;
+	font-size: 30px;
+	text-align: center;
+	color: #5A626F;
+	color: rgba(255,255,255,.25);
+}
+.movelogin-notice .movelogin-text-medium + p {
+	margin-top: -10px;
+}
+.movelogin-notice.mini p {
+	margin: .5em 0;
+}
+.movelogin-notice.mini  .movelogin-text-medium + p {
+	margin-top: -5px;
+	margin-bottom: 15px;
+}
+.movelogin-notice label.plugin-title {
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 2px 10px;
+	position: absolute;
+	top: 100%;
+	border-top: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0px 0px 2px 2px;
+}
+.movelogin-lb-logo {
+	line-height: 0;
+}
+.movelogin-notice .movelogin-close-notice {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 1.2em;
+	color: #FFF;
+	text-decoration: none;
+}
+.movelogin-notice .movelogin-close-notice:hover,
+.movelogin-notice .movelogin-close-notice:focus {
+	color: #1F9AF9;
+}
+.movelogin-notice .movelogin-col-cta {
+	position: static;
+}
+@media (min-width: 890px) {
+	.movelogin-notice .movelogin-col-cta .movelogin-button {
+		margin-right: 45px;
+	}
+}
+
+.movelogin-notice li {
+	overflow: hidden;
+	clear: both;
+}
+.movelogin-notice[data-id="deactivate-plugin"] li {
+	padding: 1px 0;
+}
+.wp-core-ui .notice.movelogin-is-dismissible {
+	position: relative;
+	padding-right: 38px;
+}
+.movelogin-notice a.notice-dismiss {
+	text-decoration: none;
+}
+.movelogin-compat-notice .notice-dismiss {
+	position: absolute;
+	top: 0;
+	right: 1px;
+	border: none;
+	margin: 0;
+	padding: 9px;
+	background: none;
+	color: #b4b9be;
+	cursor: pointer;
+}
+.movelogin-compat-notice .notice-dismiss:focus {
+	outline: none;
+	box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, .8);
+}
+.ie8 .movelogin-compat-notice .notice-dismiss:focus {
+	outline: 1px solid #5b9dd9;
+}
+.movelogin-compat-notice .notice-dismiss:before {
+	background: none;
+	color: #b4b9be;
+	content: '\f153';
+	display: block;
+	font: normal 16px/20px 'dashicons';
+	speak: none;
+	height: 20px;
+	text-align: center;
+	width: 20px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.movelogin-notice .dashicons {
+	text-decoration: none;
+}
+.movelogin-compat-notice .notice-dismiss:hover:before,
+.notice-dismiss:active:before,
+.notice-dismiss:focus:before {
+	color: #c00;
+}
+
+@media screen and (max-width: 782px) {
+	.wp-core-ui .notice.movelogin-is-dismissible {
+		padding-right: 46px;
+	}
+	.movelogin-compat-notice .notice-dismiss {
+		padding: 13px;
+	}
+	
+	.movelogin-notice.movelogin-flex  {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.movelogin-notice .movelogin-col-cta.movelogin-col-cta {
+		text-align: center;
+	}
+}
