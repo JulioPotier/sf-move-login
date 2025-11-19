@@ -112,6 +112,7 @@ function movelogin_init() {
 		require_once( MOVELOGIN_ADMIN_PATH . 'upgrader.php' );
 		movelogin_upgrader();
 	}
+	require_once( MOVELOGIN_INC_PATH . 'functions/migrations.php' );
 }
 
 add_action( 'movelogin.loaded', 'movelogin_load_plugins' );
