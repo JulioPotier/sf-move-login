@@ -4,11 +4,11 @@ defined( 'ABSPATH' ) or die( 'Something went wrong.' );
 /**
  * Global settings class.
  *
- * @package SecuPress
- * @subpackage SecuPress_Settings
+ * @package MoveLogin
+ * @subpackage MoveLogin_Settings
  * @since 1.0
  */
-class SecuPress_Settings_Global extends SecuPress_Settings {
+class MoveLogin_Settings_Global extends MoveLogin_Settings {
 
 	const VERSION = '1.1';
 
@@ -39,7 +39,7 @@ class SecuPress_Settings_Global extends SecuPress_Settings {
 	/** Init ==================================================================================== */
 
 	/**
-	 * Init: this method is required by the class `SecuPress_Singleton`.
+	 * Init: this method is required by the class `MoveLogin_Singleton`.
 	 *
 	 * @since 1.1.4
 	 * @author Grégory Viguier

@@ -555,14 +555,14 @@ function movelogin_set_transient( $transient, $value ) {
  * @return (string).
  */
 function movelogin_get_current_module() {
-	if ( ! class_exists( 'SecuPress_Settings' ) ) {
+	if ( ! class_exists( 'MoveLogin_Settings' ) ) {
 		movelogin_require_class( 'settings' );
 	}
-	if ( ! class_exists( 'SecuPress_Settings_Modules' ) ) {
+	if ( ! class_exists( 'MoveLogin_Settings_Modules' ) ) {
 		movelogin_require_class( 'settings', 'modules' );
 	}
 
-	return SecuPress_Settings_Modules::get_instance()->get_current_module();
+	return MoveLogin_Settings_Modules::get_instance()->get_current_module();
 }
 
 

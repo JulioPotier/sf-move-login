@@ -109,7 +109,7 @@ function movelogin_text_diff( $left_string, $right_string, $args = array() ) {
 		require_once( ABSPATH . WPINC . '/wp-diff.php' );
 	}
 
-	if ( ! class_exists( 'SecuPress_Text_Diff_Renderer_Table' ) ) {
+	if ( ! class_exists( 'MoveLogin_Text_Diff_Renderer_Table' ) ) {
 
 		/**
 		 * Table renderer to display the diff lines.
@@ -117,7 +117,7 @@ function movelogin_text_diff( $left_string, $right_string, $args = array() ) {
 		 * @since 1.0
 		 * @uses WP_Text_Diff_Renderer_Table Extends
 		 */
-		class SecuPress_Text_Diff_Renderer_Table extends WP_Text_Diff_Renderer_Table {
+		class MoveLogin_Text_Diff_Renderer_Table extends WP_Text_Diff_Renderer_Table {
 			/**
 			 * Number of leading context "lines" to preserve.
 			 *
@@ -147,7 +147,7 @@ function movelogin_text_diff( $left_string, $right_string, $args = array() ) {
 	$left_lines   = explode( "\n", $left_string );
 	$right_lines  = explode( "\n", $right_string );
 	$text_diff    = new Text_Diff( $left_lines, $right_lines );
-	$renderer     = new SecuPress_Text_Diff_Renderer_Table( $args );
+	$renderer     = new MoveLogin_Text_Diff_Renderer_Table( $args );
 	$diff         = $renderer->render( $text_diff );
 
 	if ( ( ! $wp_local_package && ! $diff ) ||

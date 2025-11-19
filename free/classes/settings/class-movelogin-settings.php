@@ -5,10 +5,10 @@ defined( 'ABSPATH' ) or die( 'Something went wrong.' );
 /**
  * Base class for settings.
  *
- * @package SecuPress
+ * @package MoveLogin
  * @since 1.0
  */
-abstract class SecuPress_Settings extends SecuPress_Singleton {
+abstract class MoveLogin_Settings extends MoveLogin_Singleton {
 
 	const VERSION = '1.0.1';
 
@@ -79,7 +79,7 @@ abstract class SecuPress_Settings extends SecuPress_Singleton {
 	 * @return (object) The class instance.
 	 */
 	protected function set_current_module() {
-		die( 'Method SecuPress_Settings::set_current_module() must be over-ridden in a sub-class.' );
+		die( 'Method MoveLogin_Settings::set_current_module() must be over-ridden in a sub-class.' );
 		return $this;
 	}
 
@@ -231,7 +231,7 @@ abstract class SecuPress_Settings extends SecuPress_Singleton {
 	/** Init ==================================================================================== */
 
 	/**
-	 * Init: this method is required by the class `SecuPress_Singleton`.
+	 * Init: this method is required by the class `MoveLogin_Singleton`.
 	 *
 	 * @since 1.0
 	 */
@@ -1468,7 +1468,7 @@ abstract class SecuPress_Settings extends SecuPress_Singleton {
 	 * @since 1.0
 	 */
 	public function print_page() {
-		die( 'Method SecuPress_Settings::print_page() must be over-ridden in a sub-class.' );
+		die( 'Method MoveLogin_Settings::print_page() must be over-ridden in a sub-class.' );
 	}
 
 

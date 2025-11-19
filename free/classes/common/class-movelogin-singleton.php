@@ -4,10 +4,10 @@ defined( 'ABSPATH' ) or die( 'Something went wrong.' );
 /**
  * Singleton class.
  *
- * @package SecuPress
+ * @package MoveLogin
  * @since 1.0
  */
-class SecuPress_Singleton {
+class MoveLogin_Singleton {
 
 	const VERSION = '1.0';
 
