@@ -123,7 +123,7 @@ add_filter( ( is_multisite() ? 'network_admin_' : '' ) . 'plugin_action_links_' 
  * @return (array) The array of links + our links.
  */
 function movelogin_settings_action_links( $actions ) {
-	array_unshift( $actions, sprintf( '<a href="%s">%s</a>', esc_url( trailingslashit( set_url_scheme( SECUPRESS_WEB_MAIN, 'https' ) ) . _x( 'support', 'link to website (Only FR or EN!)', 'secupress' ) ), _x( 'Support', 'noon', 'secupress' ) ) );
+	array_unshift( $actions, sprintf( '<a href="%s">%s</a>', esc_url( trailingslashit( set_url_scheme( MOVELOGIN_WEB_MAIN, 'https' ) ) . _x( 'support', 'link to website (Only FR or EN!)', 'secupress' ) ), _x( 'Support', 'noon', 'secupress' ) ) );
 	array_unshift( $actions, sprintf( '<a href="%s">%s</a>', esc_url( __( 'https://docs.secupress.me/', 'secupress' ) . 'search?query=login' ), __( 'Docs', 'secupress' ) ) );
 	array_unshift( $actions, sprintf( '<a href="%s">%s</a>', esc_url( movelogin_admin_url( 'modules' ) ), __( 'Settings' ) ) );
 
