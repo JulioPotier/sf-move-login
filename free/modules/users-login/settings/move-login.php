@@ -86,8 +86,8 @@ if ( defined( 'SFML_ALLOW_LOGIN_ACCESS' ) && constant( 'SFML_ALLOW_LOGIN_ACCESS'
 	return;
 }
 
-$labels    = movelogin_move_login_slug_labels();
-$login_url = site_url( '%%slug%%', 'login' );
+$labels     = movelogin_move_login_slug_labels();
+$login_url  = site_url( '%%slug%%', 'login' );
 $login_slug = movelogin_get_module_option( 'move-login_slug-login', 'login', 'users-login' );
 
 foreach ( $labels as $slug => $label ) {
