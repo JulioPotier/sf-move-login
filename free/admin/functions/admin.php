@@ -1,32 +1,6 @@
 <?php
 defined( 'ABSPATH' ) or die( 'Something went wrong.' );
 
-/**
- * Enqueue SweetAlert script and style.
- *
- * @since 1.0
- * @author Grégory Viguier
- */
-function movelogin_enqueue_sweet_alert() {
-	static $done = false;
-
-	if ( $done ) {
-		return;
-	}
-	if ( ! did_action( 'admin_enqueue_scripts' ) ) {
-		add_action( 'admin_enqueue_scripts', __FUNCTION__ );
-		return;
-	}
-	$done = true;
-
-	$suffix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	$version = $suffix ? '1.3.4' : time();
-
-	// Enqueue Swal2 CSS.
-	wp_enqueue_style( 'wpmedia-css-sweetalert2', MOVELOGIN_ADMIN_CSS_URL . 'sweetalert2' . $suffix . '.css', array(), $version );
-	// Enqueue Swal2 JS.
-	wp_enqueue_script( 'wpmedia-js-sweetalert2', MOVELOGIN_ADMIN_JS_URL . 'sweetalert2' . $suffix . '.js', array( 'jquery' ), $version, true );
-}
 
 
 /**
@@ -92,117 +66,6 @@ function movelogin_formate_latest_scans_list_item( $item, $last_percent = -1 ) {
 
 
 /**
- * Return a <table> containing 2 strings displayed with the Diff_Renderer from WP Core.
- *
- * @since 1.0
- *
- * @param (string) $left_string  1st text to compare.
- * @param (string) $right_string 2nd text to compare.
- * @param (array)  $args         An array of arguments (titles).
- *
- * @return (string)
- */
-function movelogin_text_diff( $left_string, $right_string, $args = array() ) {
-	global $wp_local_package;
-
-	if ( ! class_exists( 'WP_Text_Diff_Renderer_Table' ) ) {
-		require_once( ABSPATH . WPINC . '/wp-diff.php' );
-	}
-
-	if ( ! class_exists( 'MoveLogin_Text_Diff_Renderer_Table' ) ) {
-
-		/**
-		 * Table renderer to display the diff lines.
-		 *
-		 * @since 1.0
-		 * @uses WP_Text_Diff_Renderer_Table Extends
-		 */
-		class MoveLogin_Text_Diff_Renderer_Table extends WP_Text_Diff_Renderer_Table {
-			/**
-			 * Number of leading context "lines" to preserve.
-			 *
-			 * @var int
-			 * @access public
-			 * @since 1.0
-			 */
-			public $_leading_context_lines  = 0;
-			/**
-			 * Number of trailing context "lines" to preserve.
-			 *
-			 * @var int
-			 * @access public
-			 * @since 1.0
-			 */
-			public $_trailing_context_lines = 0;
-		}
-	}
-
-	$args         = wp_parse_args( $args, array(
-		'title'       => __( 'File Differences', 'movelogin' ),
-		'title_left'  => __( 'Real file', 'movelogin' ),
-		'title_right' => __( 'Your file', 'movelogin' ),
-	) );
-	$left_string  = normalize_whitespace( $left_string );
-	$right_string = normalize_whitespace( $right_string );
-	$left_lines   = explode( "\n", $left_string );
-	$right_lines  = explode( "\n", $right_string );
-	$text_diff    = new Text_Diff( $left_lines, $right_lines );
-	$renderer     = new MoveLogin_Text_Diff_Renderer_Table( $args );
-	$diff         = $renderer->render( $text_diff );
-
-	if ( ( ! $wp_local_package && ! $diff ) ||
-		( $wp_local_package && ( ! $diff || trim( strip_tags( $diff ) ) === '&nbsp;&nbsp;$wp_local_package = \'' . $wp_local_package . '\';' ) )
-		) {
-		$diff = '<tr><td>// ' . __( 'No differences', 'movelogin' ) . '</td><td>// ' . __( 'No differences', 'movelogin' ) . '</td></tr>';
-	}
-
-	$r = "<table class='diff is-split-view'>\n";
-		$r .= '<thead>';
-			$r .= '<tr class="diff-title"><th colspan="2">' . $args['title'] . "</th></tr>\n";
-		$r .= "</thead>\n";
-
-		$r .= '<tbody>';
-			$r .= "<tr class='diff-sub-title'>\n";
-				$r .= "\t<th>$args[title_left]</th>\n";
-	 			$r .= "\t<th>$args[title_right]</th>\n";
-			$r .= "</tr>\n";
-			$r .= $diff;
-		$r .= "</tbody>\n";
-
-	$r .= "</table>\n";
-
-	return $r;
-}
-
-
-/**
- * Keep the old scan report (grade + status) to be compared on step4
- *
- * @since 1.0
- * @author Julio Potier
- */
-function movelogin_set_old_report() {
-	$grade  = movelogin_get_scanner_counts( 'grade' );
-	$report = movelogin_get_scan_results();
-	update_option( 'movelogin_step1_report', array( 'grade' => $grade, 'report' => $report ) );
-}
-
-
-/**
- * Return the old scan report.
- *
- * @since 1.0
- * @author Julio Potier
- * @see movelogin_set_old_report()
- *
- * @return (array|false)
- */
-function movelogin_get_old_report() {
-	return get_option( 'movelogin_step1_report' );
-}
-
-
-/**
  * Print Marketing block with SecuPress pro advantages.
  *
  * @since 1.0
@@ -249,4 +112,41 @@ function movelogin_print_pro_advantages() {
 		</div>
 	</div>
 	<?php
+}
+
+
+/** --------------------------------------------------------------------------------------------- */
+/** ADMIN NOTICES ============================================================================== */
+/** --------------------------------------------------------------------------------------------- */
+
+add_action( 'admin_notices', 'movelogin_check_default_login_slug_notice' );
+/**
+ * Display a notice if the login slug is still set to the default value "login".
+ *
+ * @since 2.6
+ * @author Julio Potier
+ */
+function movelogin_check_default_login_slug_notice() {
+	// Only show to users with manage_options capability
+	if ( ! current_user_can( movelogin_get_capability() ) ) {
+		return;
+	}
+
+	// Check if the login slug is still set to default "login"
+	$login_slug = movelogin_get_module_option( 'move-login_slug-login', 'login', 'users-login' );
+	
+	if ( 'login' === $login_slug ) {
+		$settings_url = movelogin_admin_url( 'modules', 'users-login' );
+		$message = sprintf(
+			__( 'The login page slug is still set to its default value "%1$s". Please configure a custom slug in the %2$ssettings%3$s to secure your login page.', 'movelogin' ),
+			'<code>login</code>',
+			'<a href="' . esc_url( $settings_url ) . '">',
+			'</a>'
+		);
+		
+		printf(
+			'<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
+			$message
+		);
+	}
 }
