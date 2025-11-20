@@ -127,12 +127,10 @@ add_action( 'admin_notices', 'movelogin_check_default_login_slug_notice' );
  * @author Julio Potier
  */
 function movelogin_check_default_login_slug_notice() {
-	// Only show to users with manage_options capability
 	if ( ! current_user_can( movelogin_get_capability() ) ) {
 		return;
 	}
 
-	// Check if the login slug is still set to default "login"
 	$login_slug = movelogin_get_module_option( 'move-login_slug-login', 'login', 'users-login' );
 	
 	if ( 'login' === $login_slug ) {
