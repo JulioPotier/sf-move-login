@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SecuPress\n"
 "Report-Msgid-Bugs-To: https://secupress.me/\n"
-"POT-Creation-Date: 2025-11-18 10:31+0100\n"
-"PO-Revision-Date: 2025-11-18 10:32+0100\n"
+"POT-Creation-Date: 2025-11-20 12:31+0100\n"
+"PO-Revision-Date: 2025-11-20 12:31+0100\n"
 "Last-Translator: Julio Potier <julio@secupress.me>\n"
 "Language-Team: French (France) <contact@secupress.me>\n"
 "Language: fr_FR\n"
@@ -101,38 +101,22 @@ msgstr "Courriel non envoyé, merci de contacter le support."
 msgid "Email"
 msgstr "E-mail"
 
-#: free/admin/functions/admin.php:88
+#: free/admin/functions/admin.php:62
 #, php-format
 msgctxt "date"
 msgid "%s ago"
 msgstr "Il y a %s"
 
-#: free/admin/functions/admin.php:89
+#: free/admin/functions/admin.php:63
 msgctxt "date"
 msgid "M dS, Y \\a\\t h:ia"
 msgstr "l j F Y \\à G:i:s"
 
-#: free/admin/functions/admin.php:141
-msgid "File Differences"
-msgstr "Différences entre les fichiers"
-
-#: free/admin/functions/admin.php:142
-msgid "Real file"
-msgstr "Fichier original"
-
-#: free/admin/functions/admin.php:143
-msgid "Your file"
-msgstr "Votre fichier"
-
-#: free/admin/functions/admin.php:156
-msgid "No differences"
-msgstr "Aucunes différences"
-
-#: free/admin/functions/admin.php:219 free/functions/modules.php:178
+#: free/admin/functions/admin.php:82 free/functions/modules.php:178
 msgid "Anti-Spam"
 msgstr "Anti Spam"
 
-#: free/admin/functions/admin.php:220
+#: free/admin/functions/admin.php:83
 msgid ""
 "Bots represent about 60% of internet traffic. Don’t let them add their spam "
 "to your site!"
@@ -140,21 +124,21 @@ msgstr ""
 "Les bots représentent environ 60% du trafic Internet. Ne les laissez pas "
 "faire ça !"
 
-#: free/admin/functions/admin.php:228
+#: free/admin/functions/admin.php:91
 msgid "Alerts"
 msgstr "Alertes"
 
-#: free/admin/functions/admin.php:229
+#: free/admin/functions/admin.php:92
 msgid ""
 "Get alerts via SMS, mobile notifications, or even by social networks in "
 "addition to email."
 msgstr "Soyez alertés par courriel ou par notifications Slack."
 
-#: free/admin/functions/admin.php:237
+#: free/admin/functions/admin.php:100
 msgid "Firewall"
 msgstr "Pare-feu"
 
-#: free/admin/functions/admin.php:238
+#: free/admin/functions/admin.php:101
 msgid ""
 "Other features of the firewall add an additional level of protection from "
 "Internet attacks."
@@ -162,18 +146,28 @@ msgstr ""
 "D’autres fonctionnalités du pare-feu ajoutent un niveau additionnel de "
 "protection contre les attaques Internet."
 
-#: free/admin/functions/admin.php:246
+#: free/admin/functions/admin.php:109
 msgctxt "post type general name"
 msgid "Logs"
 msgstr "Journaux"
 
-#: free/admin/functions/admin.php:247
+#: free/admin/functions/admin.php:110
 msgid ""
 "All actions considered dangerous are kept in this log available at any time "
 "to check what is happening on your site."
 msgstr ""
 "Toutes les actions considérées comme dangereuses sont gardées dans ces "
 "journaux disponible à tout moment pour vérifier ce qui arrive à votre site."
+
+#: free/admin/functions/admin.php:141
+#, php-format
+msgid ""
+"The login page slug is still set to its default value \"%1$s\". Please "
+"configure a custom slug in the %2$ssettings%3$s to secure your login page."
+msgstr ""
+"La nouvelle page de connexion est encore réglée sur sa valeur par défaut "
+"\"%1$s\". Merci de la modifier dans les %2$sréglages%3$s pour mieux "
+"sécuriser cela."
 
 #: free/admin/functions/ajax-post.php:40
 msgid "Please try again."
@@ -224,12 +218,30 @@ msgid "Close"
 msgstr "Fermer"
 
 #: free/admin/settings.php:126
+msgctxt "link to website (Only FR or EN!)"
+msgid "support"
+msgstr "fr/support"
+
+#: free/admin/settings.php:126
+msgctxt "noon"
+msgid "Support"
+msgstr "Support"
+
+#: free/admin/settings.php:127
+msgid "https://docs.secupress.me/"
+msgstr "https://fr.docs.secupress.me/"
+
+#: free/admin/settings.php:127
+msgid "Docs"
+msgstr "Docs"
+
+#: free/admin/settings.php:128
 #: free/classes/settings/class-movelogin-settings-global.php:85
 #: free/classes/settings/class-movelogin-settings-global.php:88
 msgid "Settings"
 msgstr "Réglages"
 
-#: free/admin/settings.php:150 free/admin/settings.php:151
+#: free/admin/settings.php:152 free/admin/settings.php:153
 #: free/modules/users-login/callbacks.php:127
 #: free/modules/users-login/callbacks.php:133
 #: free/modules/users-login/callbacks.php:139
@@ -238,62 +250,62 @@ msgstr "Réglages"
 msgid "Move Login"
 msgstr "Déplacer la page de connexion"
 
-#: free/admin/settings.php:230
+#: free/admin/settings.php:232
 msgctxt "Latest scans"
 msgid "M dS, Y \\a\\t h:ia"
 msgstr "l j F Y \\à G:i:s"
 
-#: free/admin/settings.php:238
+#: free/admin/settings.php:240
 msgid "Currently scanning"
 msgstr "Scanner en cours"
 
-#: free/admin/settings.php:241
+#: free/admin/settings.php:243
 #, php-format
 msgid "%1$s&nbsp;/&nbsp;%2$s points"
 msgstr "%1$s / %2$s points"
 
-#: free/admin/settings.php:249 free/functions/modules.php:244
+#: free/admin/settings.php:251 free/functions/modules.php:244
 msgid "Scanners"
 msgstr "Scanners"
 
-#: free/admin/settings.php:267
+#: free/admin/settings.php:269
 msgid "First scan"
 msgstr "Premier scanner"
 
-#: free/admin/settings.php:268
+#: free/admin/settings.php:270
 msgid "Here’s how it’s going to work"
 msgstr "Voici comment cela fonctionne"
 
-#: free/admin/settings.php:273
+#: free/admin/settings.php:275
 msgctxt "noon"
 msgid "Scan results"
 msgstr "Résultat du scanner"
 
-#: free/admin/settings.php:282
+#: free/admin/settings.php:284
 msgid "How does it work?"
 msgstr "Comment ça marche ?"
 
-#: free/admin/settings.php:313 free/functions/common.php:1970
+#: free/admin/settings.php:315 free/functions/common.php:1970
 msgctxt "scan result"
 msgid "Good"
 msgstr "Bon"
 
-#: free/admin/settings.php:319 free/functions/common.php:1971
+#: free/admin/settings.php:321 free/functions/common.php:1971
 msgctxt "scan result"
 msgid "Pending"
 msgstr "En attente"
 
-#: free/admin/settings.php:325 free/functions/common.php:1969
+#: free/admin/settings.php:327 free/functions/common.php:1969
 msgctxt "scan result"
 msgid "Bad"
 msgstr "Mauvais"
 
-#: free/admin/settings.php:331
+#: free/admin/settings.php:333
 msgctxt "scan result"
 msgid "New Scan"
 msgstr "Nouveau scan"
 
-#: free/admin/settings.php:343
+#: free/admin/settings.php:345
 #, php-format
 msgid ""
 "Wow! My website just got an %s grade for security using @SecuPress, what "
@@ -302,28 +314,28 @@ msgstr ""
 "Wow ! Mon site a reçu le grade de sécurité %s en utilisant @SecuPress, quel "
 "est le vôtre ?"
 
-#: free/admin/settings.php:350 free/admin/settings.php:690
-#: free/admin/settings.php:693
+#: free/admin/settings.php:352 free/admin/settings.php:692
+#: free/admin/settings.php:695
 msgid "Open in a new window."
 msgstr "Ouvrir dans une nouvelle fenêtre."
 
-#: free/admin/settings.php:353
+#: free/admin/settings.php:355
 msgid "Tweet this"
 msgstr "Twitter ça"
 
-#: free/admin/settings.php:365
+#: free/admin/settings.php:367
 msgid "Your last scans"
 msgstr "Vos derniers scans"
 
-#: free/admin/settings.php:373
+#: free/admin/settings.php:375
 msgid "You have no other reports for now."
 msgstr "Vous n’avez pas d’autres rapports pour le moment."
 
-#: free/admin/settings.php:384
+#: free/admin/settings.php:386
 msgid "Schedule your security analysis"
 msgstr "Planifiez votre analyse de sécurité"
 
-#: free/admin/settings.php:386
+#: free/admin/settings.php:388
 msgid ""
 "Stay updated on the security of your website. With our automatic scans, "
 "there is no need to log in to your WordPress admin to run a scan."
@@ -332,88 +344,88 @@ msgstr ""
 "automatiques, plus besoin de se connecter dans l’administration de WordPress "
 "pour lancer un scan."
 
-#: free/admin/settings.php:390 free/admin/settings.php:392
+#: free/admin/settings.php:392 free/admin/settings.php:394
 msgctxt "Schedule date"
 msgid "Y-m-d \\a\\t h:ia"
 msgstr "d/m/Y \\à G:i"
 
-#: free/admin/settings.php:397 free/admin/settings.php:412
+#: free/admin/settings.php:399 free/admin/settings.php:414
 #, php-format
 msgid "Last automatic scan: %s"
 msgstr "Dernier scan automatique : %s"
 
-#: free/admin/settings.php:401 free/admin/settings.php:416
+#: free/admin/settings.php:403 free/admin/settings.php:418
 #, php-format
 msgid "Next automatic scan: %s"
 msgstr "Prochain scan automatique : %s"
 
-#: free/admin/settings.php:405 free/admin/settings.php:420
+#: free/admin/settings.php:407 free/admin/settings.php:422
 msgid "Schedule your next analysis"
 msgstr "Planifier votre prochaine analyse"
 
-#: free/admin/settings.php:422
+#: free/admin/settings.php:424
 msgid "Available in the PRO version"
 msgstr "Disponible dans la version PRO"
 
-#: free/admin/settings.php:435
+#: free/admin/settings.php:437
 msgid "Latest scans"
 msgstr "Derniers scans"
 
-#: free/admin/settings.php:436
+#: free/admin/settings.php:438
 msgid "View your previous scans"
 msgstr "Voir vos scans précédents"
 
-#: free/admin/settings.php:445
+#: free/admin/settings.php:447
 msgid "Schedule Scans"
 msgstr "Planification de scans"
 
-#: free/admin/settings.php:446
+#: free/admin/settings.php:448
 msgid "Manage your recurring scans"
 msgstr "Planifiez vos scans automatiques"
 
-#: free/admin/settings.php:454
+#: free/admin/settings.php:456
 msgid "Scan results"
 msgstr "Résultat du scanner"
 
-#: free/admin/settings.php:477
+#: free/admin/settings.php:479
 msgid "Click to launch first scan"
 msgstr "Cliquez pour lancer le premier scan"
 
-#: free/admin/settings.php:488
+#: free/admin/settings.php:490
 msgid "Scan my website"
 msgstr "Scanner mon site"
 
-#: free/admin/settings.php:511
+#: free/admin/settings.php:513
 msgid "Security Report"
 msgstr "Rapport de sécurité"
 
-#: free/admin/settings.php:512 free/admin/settings.php:577
+#: free/admin/settings.php:514 free/admin/settings.php:579
 msgid "Auto-Fix"
 msgstr "Correction automatique"
 
-#: free/admin/settings.php:513 free/admin/settings.php:588
+#: free/admin/settings.php:515 free/admin/settings.php:590
 msgid "Manual Operations"
 msgstr "Opérations manuelles"
 
-#: free/admin/settings.php:514 free/admin/settings.php:599
+#: free/admin/settings.php:516 free/admin/settings.php:601
 msgid "Resolution Report"
 msgstr "Rapport de résolutions"
 
-#: free/admin/settings.php:566
+#: free/admin/settings.php:568
 msgid "Site Health"
 msgstr "Santé du site"
 
-#: free/admin/settings.php:568
+#: free/admin/settings.php:570
 msgid "Start to check all security items with the Scan your website button."
 msgstr ""
 "Commencez à vérifier tous les éléments de sécurité avec le bouton Scanner le "
 "site."
 
-#: free/admin/settings.php:579
+#: free/admin/settings.php:581
 msgid "Launch the auto-fix on selected issues."
 msgstr "Lancer la correction automatique sur les problèmes sélectionnés."
 
-#: free/admin/settings.php:590
+#: free/admin/settings.php:592
 msgid ""
 "Go further and take a look at the items you have to fix with specific "
 "operations."
@@ -421,34 +433,34 @@ msgstr ""
 "Aller plus loin et jeter un oeil aux points que vous pouvez résoudre grâce à "
 "une opération spécifique."
 
-#: free/admin/settings.php:601
+#: free/admin/settings.php:603
 msgid "Get the new site health report for your website."
 msgstr "Obtenez le nouveau rapport de santé de votre site."
 
-#: free/admin/settings.php:613
+#: free/admin/settings.php:615
 msgid "I’ve got it!"
 msgstr "J’ai compris !"
 
-#: free/admin/settings.php:688
+#: free/admin/settings.php:690
 msgid "Do you like this plugin?"
 msgstr "Vous aimez notre extension ?"
 
-#: free/admin/settings.php:690
+#: free/admin/settings.php:692
 #, php-format
 msgid "Please take a few seconds to rate us on %1$sWordPress.org%2$s"
 msgstr ""
 "Merci de prendre quelques secondes pour nous noter sur %1$sWordPress.org%2$s"
 
-#: free/admin/settings.php:699
+#: free/admin/settings.php:701
 msgctxt "hidden text"
 msgid "Give us five stars"
 msgstr "Donnez nous les 5 étoiles"
 
-#: free/admin/settings.php:717
+#: free/admin/settings.php:719
 msgid "Scanner functionality is not available in this version."
 msgstr "La fonction de scanner n‘est pas dispo ici."
 
-#: free/admin/settings.php:718
+#: free/admin/settings.php:720
 msgid ""
 "The scanner feature has been removed from this plugin. Please use the full "
 "SecuPress version for scanner functionality."
@@ -934,65 +946,16 @@ msgstr "Nouveau"
 msgid "Fix done."
 msgstr "Correction effectuée."
 
-#: free/functions/common.php:2069 free/functions/modules.php:193
-msgid "Banned IPs"
-msgstr "IPs bannies"
-
-#: free/functions/common.php:2073
-msgid "Plugin Interactions"
-msgstr "Interactions des extensions"
-
-#: free/functions/common.php:2077
-msgid "Theme Interactions"
-msgstr "Interactions des thèmes"
-
-#: free/functions/common.php:2081
-msgid "ZIP Upload Attempts"
-msgstr "Tentatives de téléversement de ZIP"
-
-#: free/functions/common.php:2085
-msgid "XMLRPC Intrusions"
-msgstr "Intrusions XML-RPC"
-
-#: free/functions/common.php:2089
-msgid "Login Page"
-msgstr "Page de connexion"
-
-#: free/functions/common.php:2093
-msgid "Login Attempts"
-msgstr "Tentatives de connexion"
-
-#: free/functions/common.php:2097
-msgid "Password Spraying Attempts"
-msgstr "Tentatives de pulvérisation de mots de passe"
-
-#: free/functions/common.php:2101
-msgid "User Actions"
-msgstr "Actions des comptes"
-
-#: free/functions/common.php:2105
-msgid "Bad Robots"
-msgstr "Mauvais robots"
-
-#: free/functions/common.php:2109
-msgid "Bad Request Content"
-msgstr "Mauvais contenu de requêtes"
-
-#: free/functions/common.php:2113
-msgctxt "types of attacks"
-msgid "All"
-msgstr "Toutes"
-
-#: free/functions/common.php:2266
+#: free/functions/common.php:2140
 msgid "Plugin not found"
 msgstr "Extension non trouvée"
 
-#: free/functions/common.php:2564
+#: free/functions/common.php:2438
 msgid "You will receive your new login confirmation in your mailbox."
 msgstr ""
 "Vous recevrez la confirmation du nouveau nom dans votre boite de courriel."
 
-#: free/functions/common.php:2568
+#: free/functions/common.php:2442
 msgid "You will receive your new password confirmation in your mailbox."
 msgstr ""
 "Vous recevrez le confirmation du nouveau mot de passe dans votre boite de "
@@ -1103,6 +1066,17 @@ msgstr "1 par jour / 1 par 24 heures"
 #: free/functions/formatting.php:338
 msgid "0 Calls (blocked)"
 msgstr "0 appel (bloqué)"
+
+#: free/functions/migrations.php:19
+#, php-format
+msgid ""
+"The plugin \"Move Login\" has been deactivated because it is no longer "
+"needed. This feature is now included in %s. You can <a href=\"%s\">delete</"
+"a> it now."
+msgstr ""
+"L‘extension \"Move Login\" a été désactivée car elle n‘est plus nécessaire. "
+"Cette fonctionnalité est maintenant incluse dans %s. Vous pouvez la <a "
+"href=\"%s\">supprimer</a>."
 
 #: free/functions/modules.php:19
 msgid "Users & Login"
@@ -1478,6 +1452,10 @@ msgstr "Journaux et IP"
 #: free/functions/modules.php:188
 msgid "Monitor everything"
 msgstr "Surveillez tout"
+
+#: free/functions/modules.php:193
+msgid "Banned IPs"
+msgstr "IPs bannies"
 
 #: free/functions/modules.php:194
 msgid "Allowed IPs"
@@ -2150,7 +2128,7 @@ msgctxt "emoji"
 msgid "Star"
 msgstr "l‘Étoile"
 
-#: movelogin.php:325
+#: sf-move-login.php:326
 #, php-format
 msgid ""
 "<strong>%1$s</strong> requires PHP %2$s minimum, your website is actually "
@@ -2159,7 +2137,7 @@ msgstr ""
 "<strong>%1$s</strong> requiert PHP v%2$s minimum, votre site utilise "
 "actuellement la version %3$s."
 
-#: movelogin.php:339
+#: sf-move-login.php:340
 #, php-format
 msgid ""
 "<strong>%1$s</strong> requires WordPress %2$s minimum, your website is "
@@ -2168,16 +2146,62 @@ msgstr ""
 "<strong>%1$s</strong> requiert WordPress v%2$s minimum, votre site utilise "
 "actuellement la version %3$s."
 
-#: movelogin.php:427
+#: sf-move-login.php:428
 msgid "SP Move Login"
 msgstr "SP Move Login"
 
-#: movelogin.php:429
+#: sf-move-login.php:430
 msgid ""
 "Move your WordPress login page to protect it from bots. A SecuPress module!"
 msgstr ""
 "Déplace la page de connexion de WordPress pour la protéger des robots. Un "
 "module SecuPress !"
+
+#~ msgid "File Differences"
+#~ msgstr "Différences entre les fichiers"
+
+#~ msgid "Real file"
+#~ msgstr "Fichier original"
+
+#~ msgid "Your file"
+#~ msgstr "Votre fichier"
+
+#~ msgid "No differences"
+#~ msgstr "Aucunes différences"
+
+#~ msgid "Plugin Interactions"
+#~ msgstr "Interactions des extensions"
+
+#~ msgid "Theme Interactions"
+#~ msgstr "Interactions des thèmes"
+
+#~ msgid "ZIP Upload Attempts"
+#~ msgstr "Tentatives de téléversement de ZIP"
+
+#~ msgid "XMLRPC Intrusions"
+#~ msgstr "Intrusions XML-RPC"
+
+#~ msgid "Login Page"
+#~ msgstr "Page de connexion"
+
+#~ msgid "Login Attempts"
+#~ msgstr "Tentatives de connexion"
+
+#~ msgid "Password Spraying Attempts"
+#~ msgstr "Tentatives de pulvérisation de mots de passe"
+
+#~ msgid "User Actions"
+#~ msgstr "Actions des comptes"
+
+#~ msgid "Bad Robots"
+#~ msgstr "Mauvais robots"
+
+#~ msgid "Bad Request Content"
+#~ msgstr "Mauvais contenu de requêtes"
+
+#~ msgctxt "types of attacks"
+#~ msgid "All"
+#~ msgstr "Toutes"
 
 #~ msgctxt "ads"
 #~ msgid "Get Pro Version"
@@ -2415,10 +2439,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Nous en sommes vraiment désolés. Nous pouvons encore vous aider à "
 #~ "récupérer votre site, n’hésitez pas à nous contactez !"
-
-#~ msgctxt "link to website (Only FR or EN!)"
-#~ msgid "support"
-#~ msgstr "fr/support"
 
 #~ msgid "Ask for Support Now"
 #~ msgstr "Demander du support"
@@ -2996,16 +3016,6 @@ msgstr ""
 #~ "The documentation is actually under construction, thank you for your "
 #~ "patience."
 #~ msgstr "La documentation est en construction, merci pour votre patience."
-
-#~ msgctxt "noon"
-#~ msgid "Support"
-#~ msgstr "Support"
-
-#~ msgid "https://docs.secupress.me/"
-#~ msgstr "https://fr.docs.secupress.me/"
-
-#~ msgid "Docs"
-#~ msgstr "Docs"
 
 #~ msgid ""
 #~ "The modules for `No Theme Activation`, `No Theme Deletion` have been "
