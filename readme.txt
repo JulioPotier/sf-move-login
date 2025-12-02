@@ -2,7 +2,7 @@
 Contributors: SecuPress, juliobox, GregLone, Superment
 Tags: wordpress security, login, move login, security plugin, security
 Requires at least: 6.7
-Tested up to: 6.8.3
+Tested up to: 6.9
 Requires PHP: 8.0
 Stable tag: 2.6
 License: GPLv2 or later
@@ -91,7 +91,7 @@ Check out the [full SecuPress version](https://secupress.me/) which includes man
 == Changelog ==
 
 = 2.6 =
-* 18 Nov 25
+* 02 December 25
 * New Owner, thanks Greg :) Initial release of SP Move Login
 * Extracted Move Login module from SecuPress
 * Compatible with WordPress 6.7+ and PHP 8.0+
